@@ -4,7 +4,7 @@ import { MouseEvent, useEffect, useState } from "react";
 
 import Code from "@/app/_components/Code";
 
-import { _Button } from "../button/page";
+import { props } from "../../_components/Button";
 
 export default function Dropdown() {
   const modal = {
@@ -68,6 +68,9 @@ function _Dropdown() {
   const [isHidden, setIsHidden] = useState(true);
 
   const view = {
+    button: {
+      props: props(),
+    },
     dropdown: {
       state: isHidden,
       toggle(event: MouseEvent) {
@@ -86,7 +89,7 @@ function _Dropdown() {
 
   return (
     <div className="relative w-max">
-      <button {..._Button().props} onClick={view.dropdown.toggle}>
+      <button {...view.button.props} onClick={view.dropdown.toggle}>
         Dropdown
       </button>
       <ul

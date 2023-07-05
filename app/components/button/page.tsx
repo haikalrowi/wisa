@@ -1,6 +1,8 @@
 import Code from "@/app/_components/Code";
 
-export default function Button() {
+import Button from "../../_components/Button";
+
+export default function ButtonPage() {
   const modal = {
     button: {
       code: {
@@ -21,7 +23,7 @@ export default function Button() {
       <div className="not-prose">
         <ul>
           <li>
-            <_Button />
+            <Button />
             <Code language="htm" code={modal.button.code.htm} />
             <Code language="css" code={modal.button.code.css} />
           </li>
@@ -29,10 +31,4 @@ export default function Button() {
       </div>
     </article>
   );
-}
-
-export { _Button };
-
-function _Button() {
-  return <button className="rounded bg-ws-blue-300 px-2">Button</button>;
 }
